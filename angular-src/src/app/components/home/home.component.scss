@@ -1,0 +1,21 @@
+.add-task-btn {
+  padding: 10px 25px; //top-bottom, left-right
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+}
+
+// Ctrl + k - s
+
+.task-block {
+  background: #dddddd;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.task-block button {
+  float: right;
+  margin-top: -7px;
+  margin-right: 10px;
+}

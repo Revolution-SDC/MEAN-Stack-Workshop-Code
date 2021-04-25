@@ -1,0 +1,57 @@
+<div class="container">
+  <!-- Add Task Button
+  Display Undone Tasks
+  - Mark Completed
+  - Delete
+  Display Done Tasks -->
+
+  <div class="text-center">
+    <button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary add-task-btn">Add Task</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="task_name">Task Name:</label>
+            <input [(ngModel)]="task_name" class="form-control" type="text" id="task_name" name="task_name">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button (click)="addNewTask()" type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Display Tasks -->
+  <div class="p-4"></div>
+  <p class="h3 text-center">Undone Tasks</p>
+  <hr>
+  <div class="text-center">
+    <div class="task-block" *ngFor="let task of tasks">
+      {{task.name}}
+      <button (click)="deleteTask(task)" class="btn btn-danger">Delete</button>
+      <button (click)="markTaskAsComplete(task)" class="btn btn-success">Complete</button>
+    </div>
+  </div>
+
+  <div class="p-4"></div>
+  <p class="h3 text-center">Done Tasks</p>
+  <hr>
+  <div class="text-center">
+    <div class="task-block" *ngFor="let task of done_tasks">
+      {{task.name}}
+    </div>
+  </div>
+</div>
